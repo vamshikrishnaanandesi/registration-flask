@@ -1,0 +1,26 @@
+<html>
+<head>
+    <link rel=stylesheet type=text/css href="../static/bootstrap.min.css">
+</head>
+
+<body>
+{% for i in range(m) %}
+<ul class="list-group">
+  <li class="list-group-item">{{users[i]['id']}}
+    <ul class = "list-group">
+      <li class = "list-group-item">User Name:{{users[i]['fname']}}</li>
+      <li class = "list-group-item">Last Name:{{users[i]['lname']}}</li>
+      <li class = "list-group-item">Phone Number:{{users[i]['phone_number']}}</li>
+      <li class = "list-group-item">Email:{{users[i]['email']}}</li>
+    </ul>
+</ul>
+
+{% endfor %}
+
+
+
+
+
+
+</body>
+</html>
