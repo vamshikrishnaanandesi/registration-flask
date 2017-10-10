@@ -3,17 +3,8 @@ import json
 import requests
 from functools import wraps
 from urllib2 import Request, urlopen, URLError
-#from sqlalchemy import create_engine
-#from sqlalchemy.orm import sessionmaker
-#from database_setup import Base, Registration
 
 app = Flask(__name__)
-
-#engine = create_engine('sqlite:///registration.db')
-#Base.metadata.bind = engine
-
-#DBSession = sessionmaker(bind=engine)
-#sess = DBSession()
 url = 'https://cluzzchef-intern.herokuapp.com:443/register'
 
 def login_required(f):
@@ -112,4 +103,4 @@ def logout():
 if __name__ == '__main__':
     app.secret_key = 'super_secret_key'
     app.debug = True
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=1234)
