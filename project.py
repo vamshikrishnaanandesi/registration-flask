@@ -42,7 +42,7 @@ def register():
         requests.post(url, data = daata)
         flash('Your details have been successfully submitted, Please login to view your profile.')
 
-        return redirect(url_for('login'))
+        return redirect(url_for('home'))
     return render_template('index.html')
 
 @app.route('/login', methods = ['GET','POST'])
@@ -81,7 +81,6 @@ def login():
                                 print status
                                 if status==True:
                                         session['logged-in'] = True
-                                        flash('You were just logged in')
                                         return render_template('logged.html', fname = fname, lname = lname, email = email, phone_number = phone_number)
                                 else :
                                         return render_template('index.html', error = error)
@@ -104,6 +103,7 @@ def login():
 
 
 @app.route('/logout')
+@login_required
 def logout():
     session.pop('logged-in', None)
     flash('You were just logged out')
